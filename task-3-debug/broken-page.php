@@ -41,7 +41,7 @@ $testimonials = [
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title><?php echo $practice_info['name']; ?></title>
+    <title><?php echo htmlspecialchars($practice_info['name']); ?></title>
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body { font-family: 'Lato', sans-serif; color: #333; }
