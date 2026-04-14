@@ -117,6 +117,7 @@ $testimonials = [
                 align-items: center;
             }
             .hero h1 { font-size: 32px; }
+        }
 
     </style>
 </head>
