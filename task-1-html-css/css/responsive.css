@@ -1,0 +1,30 @@
+@media(max-width: 768px){
+    .my-row{
+        flex-direction: column;
+        text-align: center;
+    }
+    .hero-text, .hero-image{
+        width: 100%;
+    }
+    .sub-title{
+        display: flex;
+        justify-content: center;
+    }
+}
+@media(max-width: 568px){
+    .hero-section{
+        padding: 50px 0;
+    }
+    .grids{
+        grid-template-columns: 1fr;
+    }
+}
+
+@media(max-width: 320px){
+    .hero-section{
+        padding: 50px 0;
+    }
+    .grids{
+        grid-template-columns: 1fr;
+    }
+}

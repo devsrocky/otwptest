@@ -52,13 +52,13 @@ ul, ol {
 
     /* Colors — inspect the Figma color palette to get exact hex values */
     /* TODO: Fill in the exact colors from the Figma file */
-    --color-primary: #______;      /* Main brand color (inspect from Figma) */
-    --color-secondary: #______;    /* Secondary color (inspect from Figma) */
-    --color-accent: #______;       /* Accent/highlight color (inspect from Figma) */
-    --color-text: #______;         /* Main text color (inspect from Figma) */
-    --color-text-light: #______;   /* Light/muted text (inspect from Figma) */
+    --color-primary: #0A5D2E;      /* Main brand color (inspect from Figma) */
+    --color-secondary: #95440B;    /* Secondary color (inspect from Figma) */
+    --color-accent: #2CD080;       /* Accent/highlight color (inspect from Figma) */
+    --color-text: #030712;         /* Main text color (inspect from Figma) */
+    --color-text-light: #FFFFFF;   /* Light/muted text (inspect from Figma) */
     --color-white: #FFFFFF;
-    --color-bg-light: #______;     /* Light background sections (inspect from Figma) */
+    --color-bg-light: #FFFFFF;     /* Light background sections (inspect from Figma) */
 
     /* Spacing */
     --container-width: 1240px;
@@ -99,7 +99,7 @@ ul, ol {
 .body-1     { font-family: var(--font-body); font-weight: 300; font-size: 20px; line-height: 30px; letter-spacing: 0.5px; }
 .body-2     { font-family: var(--font-body); font-weight: 300; font-size: 18px; line-height: 28px; letter-spacing: 0.5px; }
 .body-3     { font-family: var(--font-body); font-weight: 300; font-size: 16px; line-height: 26px; letter-spacing: 0; }
-.btn-text   { font-family: var(--font-heading); font-weight: 700; font-size: 20px; line-height: 30px; letter-spacing: 1.25px; }
+.btn-text   { font-family: var(--font-heading); font-weight: 700; font-size: 20px; line-height: 30px; letter-spacing: 1.25px; text-transform: uppercase;}
 
 
 /* ============================================
@@ -141,7 +141,261 @@ ul, ol {
    ============================================ */
 
 /* START YOUR CSS HERE */
+.spacer{
+    width: 100%;
+    height: 100px;
+}
+.hero-section{
+    width: 100%;
+    padding: var(--section-padding) 0;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+}
+.hero-section::after{
+    position: absolute;
+    content: '';
+    width: 100%;
+    height: 100%;
+    bottom: -300px;
+    left: 0;
+    background: url(../images/Vector.svg) no-repeat center;
+    background-size: cover;
+    z-index: -1;
+}
+.my-container{
+    max-width: var(--container-width);
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+.my-row{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 40px;
+}
+.hero-content{
+    flex: 1.2;
+}
+.hero-image{
+    position: relative;
+    flex: 0.8;
+}
+.hero-image img{
+    width: 100%;
+    height: 100%;
+    border-radius: 20px;
+    object-fit: cover;
+}
+.hero-image::after{
+    position: absolute;
+    content: '';
+    top: 0;
+    right: 20px;
+    width: 100px;
+    height: 100px;
+    background: url(../images/Vector\ 154.png) no-repeat 
+}
+.hero-image::before{
+    position: absolute;
+    content: '';
+    bottom: 0;
+    left: 30px;
+    width: 100%;
+    height: 60px;
+    background: url(../images/Vector\ 153.png) no-repeat;
+}
 
+.sub-title{
+    display: flex;
+    justify-content: left;
+}
+.pre-header{
+    width: fit-content;
+    color: var(--color-primary);
+    margin-bottom: 20px;
+    position: relative;
+    border-bottom: 1px solid #ced0d377;
+}
+.hero-title{
+    color: var(--color-secondary);
+    margin-bottom: 20px;
+}
+.hero-text{
+    color: var(--color-text);
 
+}
+.hero-image img{
+    width: 100%;
+}
+.grids{
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 20px;
+}
+.grid {
+    width: 100%;
+    padding: 60px 40px;
+    border-radius: 20px;
+    background: #00BC4D;
+    position: relative;
+    overflow: hidden;
+}
+.grid-content{
+    display: flex;
+    align-items: center;
+    gap: 34px;
+    transition: all .3s ease-out;
+}
+.grid-hover-img{
+    position: absolute;
+    top: 0;
+    left: -390px;
+    width: 100%;
+    height: 100%;
+    border-radius: 20px;
+    object-fit: cover;
+    opacity: 0;
+    visibility: hidden;
+    transition: .3s ease;
+}
+.grid:hover .grid-hover-img{
+    left: 0px;
+    opacity: 1;
+    visibility: visible;
+}
+.grid::after{
+    position: absolute;
+    content: '';
+    top: 0;
+    right: 20px;
+    width: 100px;
+    height: 100px;
+    background: url(../images/Vector\ 154.png) no-repeat;
+}
+.grid::before{
+    position: absolute;
+    content: '';
+    bottom: -16px;
+    left: 30px;
+    height: 50px;
+    width: 100px;
+    background: url(../images/Vector\ grid\ 153.png) no-repeat;
+    z-index: 1;
+}
+.grid:first-child::before{
+    background: url(../images/Vector\ 153\ \(1\).png) no-repeat !important;
+}
+.grid:nth-child(2){
+    background: #B7E807;
+}
+.grid:nth-child(3){
+    background: #EC9F05;
+}
 
+/* GALLARY SECTION  */
+.gallery-section{
+    width: 100%;
+    position: relative;
+    z-index: 1;
+}
+.wave{
+    width: 100%;
+}
+.wave img{
+    width: 100%;
+    object-fit: cover;
+}
+.row{
+    flex-direction: column;
+    gap: 10px;
+}
+.row .sub-title h6{
+    color: var(--color-white) ;
+}
+.row .hero-title{
+    text-align: center;
+    color: #FFDC49;
+}
+.gallery-bg{
+    background: var(--color-primary);
+}
+.gallery-grids{
+    display: flex;
+    gap: 10px;
+}
+.gallery-img-grid{
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+.gallery-img-grid img{
+    width: 100%;
+    height: 400px;
+}
+.gallery-img-grid:first-child img{
+    border-bottom-left-radius: 100px;
+}
+.gallery-img-grid:last-child img{
+    border-top-right-radius: 100px;
+}
+.gallary-content, .gallery-img{
+    flex: 1;
+}
+.gallary-content p{
+    color: #FFFFFF;
+}
+
+/* SERVICE SECTION  */
+.service-section{
+    position: relative;
+    z-index: 1;
+}
+.service-section::after{
+    position: absolute;
+    content: '';
+    top: -300px;
+    left: 0;
+    width: 100%;
+    height: 1200px;
+    background: url(../images/Vector-service.png) no-repeat;
+    background-position: center center;
+    background-size: contain;
+    z-index: -1;
+}
+.service-header{
+    flex-direction: column;
+    gap: 10px;
+}
+.service-header .pre-header{
+    margin-bottom: 0 !important;
+}
+.service-header .hero-title{
+  margin-bottom: 0 !important;
+}
+.service-header .body-1{
+    width: 60%;
+    text-align: center;
+}
+.hero-image .content{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 50%;
+    border-top-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+    padding: 20px 10px;
+    background: #2CD080;
+}
+.hero-image  .flex-clumn{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.strong{
+    font-weight: 600;
+    text-align: center;
+}
 /* END YOUR CSS HERE */
+
