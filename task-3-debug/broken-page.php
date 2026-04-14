@@ -150,7 +150,7 @@ $testimonials = [
             <?php foreach ($testimonials as $testimonial) { ?>
                 <div class="testimonial-card">
                     <div class="stars">
-                        <?php for ($i = 0; $i <= $testimonial['rating']; $i++) { ?>
+                        <?php for ($i = 0; $i < $testimonial['rating']; $i++) { ?>
                             ★
                         <?php } ?>
                     </div>
