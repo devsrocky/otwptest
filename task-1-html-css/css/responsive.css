@@ -10,6 +10,24 @@
         display: flex;
         justify-content: center;
     }
+    .btn-parent {
+        align-items: center;
+    }
+    .gallery-grids{
+        grid-template-columns: repeat(3, 1fr);
+    }
+    .tab-none{
+        display: none;
+    }
+    .revase-element{
+        flex-direction: column-reverse;
+    }
+    .spacer{
+        height: 30px;
+    }
+    .service-header .body-1 {
+        width: 100%;
+    }
 }
 @media(max-width: 568px){
     .hero-section{
@@ -17,6 +35,12 @@
     }
     .grids{
         grid-template-columns: 1fr;
+    }
+    .gallery-grids{
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .sm-none{
+        display: none;
     }
 }
 
