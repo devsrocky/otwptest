@@ -179,6 +179,9 @@ ul, ol {
     align-items: center;
     overflow: hidden;
 }
+.gallery-section .btn:hover {
+    color: var(--color-white) !important;
+}
 .btn .icon .white-icon, .btn .icon .black-icon{
     position: relative;
     transition: opacity .3s ease, transform .3s ease;
@@ -373,7 +376,7 @@ ul, ol {
 .gallery-section{
     width: 100%;
     position: relative;
-    z-index: 1;
+    z-index: 5;
 }
 .wave{
     width: 100%;

@@ -114,12 +114,67 @@ $doctors = [
     <title>Our Doctors</title>
     <style>
         /* Add basic styling if you want — this is optional */
-        body { font-family: 'Lato', sans-serif; max-width: 1200px; margin: 0 auto; padding: 20px; }
+        body { font-family: 'Lato', sans-serif; max-width: 1200px; margin: 0 auto; padding: 20px;  }
+        .doctors-section{
+            width: 100%;
+        }
+        .container{
+            width: 1200px;
+            margin: 0 auto;
+        }
+        .doctors-section h2{
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        .doctors-items {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 40px;
+        }
+        .doctor-card{
+            width: 100%;
+            padding: 20px 15px;
+            border-radius: 10px;
+            border: 1px solid #ddd;
+            background: #ffffff;
+            box-shadow: 15px 15px 20px rgba(0, 0, 0, 0.2);
+            transition: 0.3s;
+        }
+        .doctor-card img{
+            width: 100%;
+        }
+        .doctor-card h3{
+            margin: 10px 0 5px;
+        }
+        .doctor-card p{
+            margin: 5px 0;
+            font-size: 14px;
+            color: #606060
+        }
+        .doctor-card ul{
+            padding-left: 18px;
+            margin-top: 10px
+        }
+        .doctor-card ul li{
+            font-size: 13px;
+            margin-bottom: 5px;
+        }
+        @media(max-width: 768px){
+            .container{
+                width: 90%;
+                margin: 0 auto;
+            }
+            .doctors-items{
+                max-width: 100%;
+                grid-template-columns: repeat(1, 1fr);
+            }
+        }
     </style>
 </head>
 <body>
 
 <section class="doctors-section">
+    <div class="container">
     <h2>Meet Our Doctors</h2>
 
     <!-- START YOUR PHP LOOP HERE -->
@@ -135,7 +190,22 @@ $doctors = [
         IMPORTANT: Escape ALL dynamic output!
     -->
 
-
+    <div class="doctors-items">
+        <?php foreach ($doctors as $doctors): ?>
+        <div class="doctor-card">
+            <img src="<?php echo esc_url($doctors['photo_url']); ?>" alt="img">
+            <h3><?php echo esc_html($doctors['name']); ?></h3>
+            <p><?php echo esc_html($doctors['specialty']);?></p>
+            <p><?php echo esc_html($doctors['bio']);?></p>
+            <ul>
+                <?php  foreach ($doctors['credentials'] as $credential): ?>
+                    <li><?php echo esc_html($credential);?></li>
+                <?php endforeach; ?>
+            </ul>
+        </div>
+        <?php endforeach; ?>
+    </div>
+    </div>
 
     <!-- END YOUR PHP LOOP HERE -->
 
